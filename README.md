@@ -1,2 +1,29 @@
 # Email-validation
-Developed a Python script for validating email addresses, ensuring they meet specific criteria. The script checks the length of the email, verifies the presence of a letter at the beginning, and ensures the correct usage of '@' symbol. Additionally, it examines the placement of the dot ('.') in the domain and enforces rules for uppercase letters, spaces, and special characters. This project demonstrates proficiency in Python programming, string manipulation, and conditional statements for input validation.
+email=str(input("enter your email.id:-"))#g@g.in ,wscobe@gmail.com
+k,j,d=0,0,0
+if len(email)>=6:
+    if email[0].isalpha():
+        if ("@" in email) and (email.count("@")==1):
+            if    (email[-4]==".") ^ (email[-3]==".") :
+                    for i in email:
+                        if i==i.isspace:
+                            k=1
+                        elif i.isalpha():
+                            if i==i.upper():
+                                J=1
+                        elif i.isdigit():
+                            continue
+                        elif i=="_" or i=="." or i=="@":
+                            continue
+                        else:
+                            d=1
+                    if k==1 or j==1  or d==1:
+                        print("your email is valid")  
+            else:
+                print(". should be there ")
+        else:
+            print("@ is missing")
+    else:
+        print("there should be a  letter in the starting ")
+else:
+    print("length should be greter than 6 ")
